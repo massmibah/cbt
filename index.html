@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="index.css">
+    <title>Document</title>
+</head>
+<body>
+    <div class="login-container">
+        <h2>CBT</h2>
+        <form id="loginForm">
+            <div class="input-group">
+                <label for="username">Username</label>
+                <input type="text" id="username" required>
+            </div>
+            <div class="input-group">
+                <label for="password">Password</label>
+                <input type="password" id="password" required>
+            </div>
+            <button><a href="new.html">Login</a></button>
+        </form>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
+<script>
+    document.getElementById('loginForm').addEventListener('submit', function(event) {
+    event.preventDefault(); 
+
+    const username = document.getElementById('username').value;
+    const password = document.getElementById('password').value;
+
+    
+    if (username === '' || password === '') {
+        alert('Please fill in all fields');
+    } else {
+        alert('Login successful!'); 
+    }
+});
+</script>

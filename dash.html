@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>document</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            padding: 20px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+        th, td {
+            border: 1px solid #ccc;
+            padding: 10px;
+            text-align: left;
+        }
+        th {
+            background-color: #5cb85c;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <h1>Student Results</h1>
+    <table id="resultsTable">
+        <thead>
+            <tr>
+                <th>Student Name</th>
+                <th>Score</th>
+            </tr>
+        </thead>
+        <tbody>
+            
+        </tbody>
+    </table>
+    <br>
+    <span><span style="color: red;">*</span>Note If An Answer Is Picked It Cannot be edited </span>
+    <div class="aa">
+        <h1>question 1</h1>
+        <li>what is the largest country in africa</li>
+        <input type="radio" name="" id=""><span>Nigeria</span>
+        <br>
+        <input type="radio" name="" id=""><span>Angola</span>
+        <br>
+        <input type="radio" name="" id=""><span>Egypt</span>
+
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
+<script>
+
+
+const students = [
+    { name: "samuel", score: 85 },
+    { name: "seun", score: 78 },
+    { name: "ayo", score: 92 },
+    { name: "David", score: 88 },
+    { name: "tola", score: 95 },
+    { name: "ewa", score: 67 },
+    { name: "Grace", score: 74 },
+    { name: "Hannah", score: 90 },
+    { name: "bose", score: 82 },
+    { name: "jane", score: 76 },
+    { name: "Kate", score: 89 },
+    { name: "Leonard", score: 91 }
+];
+
+
+function displayResults() {
+    const resultsTableBody = document.getElementById('resultsTable').getElementsByTagName('tbody')[0];
+
+    students.forEach(student => {
+        const row = resultsTableBody.insertRow();
+        const nameCell = row.insertCell(0);
+        const scoreCell = row.insertCell(1);
+
+        nameCell.textContent = student.name;
+        scoreCell.textContent = student.score;
+    });
+}
+
+displayResults();
+</script>
